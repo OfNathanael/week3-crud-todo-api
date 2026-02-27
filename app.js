@@ -31,6 +31,7 @@ app.get("/todos/:id", (req, res) => {
 }); //Endpoint to retrieve a specific todo item by id. Responds with a JSON object of the todo and a 200 OK status. If the todo is not found, it responds with a 404 Not Found status and an error message.
 
 //Post a new todo
+//Add a new todo
 app.post("/todos", (req, res) => {
   const newTodo = { id: todos.length + 1, ...req.body };
   todos.push(newTodo); //Creating a new todo item by taking the request body and assigning it a new id based on the current length of the todos array. The new todo is then added to the todos array.
