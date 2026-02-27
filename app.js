@@ -19,7 +19,7 @@ app.get("/todos/all", (req, res) => {
 
 //To Get todo with "true" completion status and send an "active" message
 app.get("/todos/active", (req, res) => {
-  const activeTodo = todos.filter((t) => t.completed === true); //Filtering the todos array to find all todo items that have a completed status of true. The filter method creates a new array that includes only the todos that meet this condition.
+  const activeTodo = todos.filter(todo => !todo.completed); //Filtering the todos array to find all todo items that have a completed status of true. The filter method creates a new array that includes only the todos that meet this condition.
   res.status(200).json({ message: `There are ${activeTodo.length} active todos.` }); //Responding with a message that includes the count of completed todos and indicates that they are active. The response is sent with a 200 OK status.
 });
 
